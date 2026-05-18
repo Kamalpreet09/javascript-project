@@ -1,16 +1,17 @@
 let form = document.getElementById("admissionForm");
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", async function(e){
+
   e.preventDefault();
 
+  // INPUT VALUES
   let name = document.getElementById("name").value.trim();
   let email = document.getElementById("email").value.trim();
   let phone = document.getElementById("phone").value.trim();
-  let course = document.getElementById("course").value;
 
   // VALIDATION
   if(name.length < 3){
-    alert("Name must be at least 3 characters");
+    alert("Enter valid name");
     return;
   }
 
@@ -24,15 +25,46 @@ form.addEventListener("submit", function(e){
     return;
   }
 
-  if(course === ""){
-    alert("Please select a course");
-    return;
+  // DATA OBJECT
+  let studentData = {
+    name: name,
+    email: email,
+    phone: phone
+  };
+
+  try{
+
+    // API CALL
+    let response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts",
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":"application/json"
+        },
+
+        body: JSON.stringify(studentData)
+      }
+    );
+
+    let result = await response.json();
+
+    console.log(result);
+
+    // SUCCESS POPUP
+    document.getElementById("successPopup").style.display = "flex";
+
+    form.reset();
+
+  }catch(error){
+
+    alert("Something went wrong");
+
+    console.log(error);
+
   }
 
-  // SHOW POPUP
-  document.getElementById("successPopup").style.display = "flex";
-
-  form.reset();
 });
 
 // CLOSE POPUP
