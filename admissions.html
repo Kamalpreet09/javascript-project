@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admissions</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css 1/style.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="index.html">Noisery</a>
+</div>
+</nav>
+<section class="admission-hero text-center text-white d-flex align-items-center">
+  <div class="container">
+    <h1 data-aos="fade-up">Admissions Open 2026</h1>
+    <p data-aos="fade-up" data-aos-delay="200">
+      Apply now and start your journey with us
+    </p>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <form id="admissionForm" class="form-box glass p-4">
+
+        <h3 class="text-center mb-4">Apply Now</h3>
+
+        <input type="text" id="name" class="form-control my-2" placeholder="Full Name">
+        
+        <input type="email" id="email" class="form-control my-2" placeholder="Email">
+
+        <input type="tel" id="phone" class="form-control my-2" placeholder="Phone Number">
+
+        <select id="course" class="form-control my-2">
+          <option value="">Select Course</option>
+          <option>B.Tech</option>
+          <option>MBA</option>
+          <option>BCA</option>
+          <option>AI & Data Science</option>
+        </select>
+
+        <button class="btn btn-light w-100 mt-3">Submit Application</button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup">
+  <div class="popup-content">
+    <h2>🎉 Application Submitted!</h2>
+    <p>We will contact you soon.</p>
+    <button onclick="closePopup()" class="btn btn-info">OK</button>
+  </div>
+</div>
+
+<div class="container mt-5">
+<form id="form" class="glass p-4">
+<h3>Apply Now</h3>
+
+<input class="form-control my-2" placeholder="Full Name">
+<input class="form-control my-2" placeholder="Email">
+
+<select class="form-control my-2">
+<option>Select Course</option>
+<option>B.Tech</option>
+<option>MBA</option>
+</select>
+
+<button class="btn btn-light w-100 mt-2">Submit</button>
+</form>
+</div>
+
+<script src="js 1/form.js"></script>
+<script src="js 1/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+</body>
+</html>
